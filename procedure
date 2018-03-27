@@ -1,0 +1,52 @@
+Folder and files used in this project
+
+Take a look at the folder and files structure used in this project.
+
+    Manage Site – This is like an admin folder which contains files to create and view all the dynamic web pages of the website.
+        Cleditor – A light weight javascript library for UI text editor.
+        js – Admin area javascript files
+        home.php – Home page for the admin area
+        header.php – The header part of the admin
+        footer.php – The footer part of the admin
+        manage_pages.php – Manage all the pages that are created or to be created. delete pages from this section
+        add_edit_page.php – Add or edit a page here
+        tagline.php – Update website tagline here
+    libs – It contain configuration files, common functions and database connection script
+        common_functions.php – Commonly used function for the websites and admin area.
+        constants.php – Define constatant like table names, databasebe user access, site name
+        config.php – Database connection script.
+    js – It contains javascript files for the website.
+    images – Images for the website.
+    css – The stylesheet files for the website.
+    index.php – The home page of the website.
+    header.php – Dynamic header of the website.
+    footer.php – Dynamic footer of the website.
+    sidebar.php – Dynamic right sidebar of the website.
+    about-us.php – About us page.
+    contact-us.php – Contact us page with form.
+    category.php – Category page with sub pages.
+    page.php – A dynamic page that will load page content based on id.
+    
+    
+   ********************* How to set up the project in your server.***************
+
+Follow these steps to setup this project in your server:
+
+    -Download the project zip file (link is available below).
+    -Create a folder name simple-website under your htdocs/www folder.
+    -In your phpmyadmin create a database named simple-website (you can give any other name too). Execute the SQL file database.sql in your database (remove create statement if you have already create a database).
+    - Go to constants.php under libs folder. (libs/constants.php). Replace the database name in DB_DATABASE which your database name, add database username, hostname, passsword.
+    - Also change the site URL (HTTP_SERVER and SITE_DIR)
+
+************************Tips and tricks about the project.*************************
+
+There are some points that you need to remember and follow:
+
+    - The table mp_pages has a field page_name it must be unique for every record. It means that every page must have a unique page name.
+    - For the home page use index in the page_name field(mandatory), similarly for other pages like contact-us.php use contact-us(can be some other name ).
+    -Pages can be created in two ways, 
+	(a) create a physical page with any name e.g. abc.php and then add/upload to your server. 
+	then add a database record with a same page which will have all the content, title and meta tags. 
+	(b) The other way is just to create a new page through database but with unique page name (this is used when you want pretty page url) and
+	then the content will be called through their ids. 
+	like creating a page.php page and getting their contents, title (page.php?id=10).
